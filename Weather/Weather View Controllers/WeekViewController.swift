@@ -16,6 +16,7 @@ class WeekViewController: WeatherViewController {
     
     @IBOutlet var tableView: UITableView!
     
+    private let date = DateFormatter()
     var delegate: WeekViewControllerDelegate?
     
     var viewModel: WeekViewViewModel? {
@@ -25,15 +26,13 @@ class WeekViewController: WeatherViewController {
     }
     
     fileprivate lazy var dayFormatter: DateFormatter = {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "EEEE"
+        date.dateFormat = "EEEE"
         return dateFormatter
     }()
     
     fileprivate lazy var dateFormatter: DateFormatter = {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMMM d"
-        return dateFormatter
+        self.date.dateFormat = "MMMM d"
+        return self.dateFormatter
     }()
     
     override func viewDidLoad() {
