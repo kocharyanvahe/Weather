@@ -31,7 +31,7 @@ class WeekViewController: WeatherViewController {
     }()
     
     fileprivate lazy var dateFormatter: DateFormatter = {
-        self.date.dateFormat = "MMMM d"
+        date.dateFormat = "MMMM d"
         return self.dateFormatter
     }()
     
