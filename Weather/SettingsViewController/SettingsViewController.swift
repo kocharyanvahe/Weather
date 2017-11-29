@@ -22,28 +22,10 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupView()
-    }
-    
-    // MARK: - View Methods
-    
-    private func setupView() {
-        setupTableView()
-    }
-    
-    private func updateView() {
-        
-    }
-    
-    // MARK: -
-    
-    private func setupTableView() {
-        tableView.separatorInset = .zero
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 }
 

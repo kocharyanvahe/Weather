@@ -15,22 +15,22 @@ class ViewController: UIViewController {
     
     private let segueDayView = "SegueDayView"
     private let segueWeekView = "SegueWeekView"
-    fileprivate let SegueSettingsView = "SegueSettingsView"
+    private let SegueSettingsView = "SegueSettingsView"
     
     // MARK: - Properties
     
-    @IBOutlet fileprivate var dayViewController: DayViewController!
-    @IBOutlet fileprivate var weekViewController: WeekViewController!
+    @IBOutlet private var dayViewController: DayViewController!
+    @IBOutlet private var weekViewController: WeekViewController!
     
     // MARK: -
     
-    fileprivate var currentLocation: CLLocation? {
+    private var currentLocation: CLLocation? {
         didSet {
             fetchWeatherData()
         }
     }
     
-    fileprivate lazy var dataManager = {
+    private lazy var dataManager = {
         return DataManager(baseURL: API.AuthenticatedBaseURL)
     }()
     
@@ -40,7 +40,6 @@ class ViewController: UIViewController {
         // Configure Location Manager
         locationManager.distanceFilter = 1000.0
         locationManager.desiredAccuracy = 1000.0
-        
         return locationManager
     }()
 
@@ -112,7 +111,7 @@ class ViewController: UIViewController {
         }
     }
     
-    fileprivate func fetchWeatherData() {
+    private func fetchWeatherData() {
         guard let location = currentLocation else { return }
         let latitude = location.coordinate.latitude
         let longitude = location.coordinate.longitude

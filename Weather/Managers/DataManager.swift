@@ -9,11 +9,9 @@
 import Foundation
 
 enum DataManagerError: Error {
-    
     case unknown
     case failedRequest
     case invalidResponse
-    
 }
 
 final class DataManager {
